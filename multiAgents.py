@@ -81,16 +81,22 @@ for k in range(1000):
     if k==0:
         si1[0] = 1
         si2[0] = 1
+        si3[0] = 1
 
     else:
         si1[k] = 2*yd[k] - 2*y1[k] - yd[k] + y4[k]
-        
-        si1[k] = 2*yd[k] - 2*y1[k] - yd[k] + y4[k]
+
+        si2[k] = -yd[k] + y1[k] + 2*yd[k] - 2*y2[k] - yd[k] + y3[k]
+
+        si3[k] = -yd[k] + y2[k] + 2*yd[k] -2*y3[k]
+
+        si4[k] = -yd[k] + y1[k] - yd[k] + y3[k] + 2*yd[k] - 2*y4[k]
 
     #Input 
 
     if k == 0:
-        u[0] = 1
+        u1[0] = 1
+
 
     else:
-        u[k] = 
+        u1[k] = (u1[k-])
