@@ -12,9 +12,21 @@ epsilon = 10**(-5)
 
 #Define phi as arrays
 
-phi = np.zeros((1000, 1))
-phi[0] = 1
-phi[1] = 1
+phi1 = np.zeros((1000, 1))
+phi1[0] = 1
+phi1[1] = 1
+
+phi2 = np.zeros((1000, 1))
+phi2[0] = 1
+phi2[1] = 1
+
+phi3 = np.zeros((1000, 1))
+phi3[0] = 1
+phi3[1] = 1
+
+phi4 = np.zeros((1000, 1))
+phi4[0] = 1
+phi4[1] = 1
 
 #Input initializations
 u1 = np.zeros((1000, 1))
@@ -96,7 +108,16 @@ for k in range(1000):
 
     if k == 0:
         u1[0] = 1
+        u2[0] = 1
+        u3[0] = 1
+        u4[0] = 1
 
 
     else:
-        u1[k] = (u1[k-])
+        u1[k] = (u1[k-1]) + ((rho*phi1[k]) / (lamda + ((np.linalg.norm(phi1[k]))**2))) * (si1[k])
+
+        u2[k] = (u2[k-1]) + ((rho*phi2[k]) / (lamda + ((np.linalg.norm(phi2[k]))**2))) * (si2[k])
+
+        u3[k] = (u3[k-1]) + ((rho*phi3[k]) / (lamda + ((np.linalg.norm(phi3[k]))**2))) * (si3[k])
+
+        u4[k] = (u4[k-1]) + ((rho*phi4[k]) / (lamda + ((np.linalg.norm(phi4[k]))**2))) * (si4[k])
