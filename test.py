@@ -46,7 +46,7 @@ for k in range(400):
     if k == 1:
         phi1[1] = 2
         phi2[1] = 2
-        phi3[1] = 3
+        phi3[1] = 2
         phi4[1] = 2
     elif k == 2:
         phi1[k] = phi1[k-1] + (eta * (u1[k-1]-0) / (mu + (u1[k-1]-0)**2)) * (y1[k] - y1[k-1] - phi1[k-1] * (u1[k-1]-0))
@@ -100,6 +100,7 @@ for k in range(400):
 
 #Create_subplots
 
+
 fig, axs = plt.subplots(2, 2, figsize=(10, 8))
 fig1 = axs[0,0]
 fig2 = axs[0,1]
@@ -110,18 +111,40 @@ fig1.plot(y1[:-1], '-r', label='y1')
 fig1.plot(y2[:-1], '-g', label='y2')
 fig1.plot(y3[:-1], '-y', label='y3')
 fig1.plot(y4[:-1], '-k', label='y4')
+fig1.legend(['Desired Output','y1','y2','y3','y4'])
 fig1.grid(True)
 
-fig1.set_title('Comparison of Outputs')  # Set the title of the plot
-fig1.set_xlabel('Sample Index')  # Set the x-axis label
-fig1.set_ylabel('Output Value')  # Set the y-axis label
+fig1.set_title(' Tracking performance for time invariable desired trajectory')  # Set the title of the plot
+fig1.set_xlabel('Step')  # Set the x-axis label
+fig1.set_ylabel('The tracking performance')  # Set the y-axis label
 
 # fig2.plot(yd, '-b', label='Desired Output')
 fig2.plot(e1[:-1], '-r', label='y1')
 fig2.plot(e2[:-1], '-g', label='y2')
 fig2.plot(e3[:-1], '-y', label='y3')
 fig2.plot(e4[:-1], '-k', label='y4')
+fig2.legend(['e1','e2','e3','e4'])
 fig2.grid(True)
+
+fig2.set_title('  Consensus tracking errors for time invariable desired trajectory')  # Set the title of the plot
+fig2.set_xlabel('Step')  # Set the x-axis label
+fig2.set_ylabel('The tracking errors')  # Set the y-axis label
+
+fig1.set_title(' Tracking performance for time invariable desired trajectory')  # Set the title of the plot
+fig1.set_xlabel('Step')  # Set the x-axis label
+fig1.set_ylabel('The tracking performance')  # Set the y-axis label
+
+# fig2.plot(yd, '-b', label='Desired Output')
+fig3.plot(phi1[:-1], '-r', label='y1')
+fig3.plot(phi2[:-1], '-g', label='y2')
+fig3.plot(phi3[:-1], '-y', label='y3')
+fig3.plot(phi4[:-1], '-k', label='y4')
+fig3.legend(['phi1','phi2','phi3','phi4'])
+fig3.grid(True)
+
+fig3.set_title('   PPD estimation for time invariable desired trajectory')  # Set the title of the plot
+fig3.set_xlabel('Step')  # Set the x-axis label
+fig3.set_ylabel('The PPD estimation')  # Set the y-axis label
 
 # Plot the desired output vs the actual output
 # plt.plot(yd, '-b', label='Desired Output')
