@@ -112,6 +112,10 @@ fig1.plot(y3[:-1], '-y', label='y3')
 fig1.plot(y4[:-1], '-k', label='y4')
 fig1.grid(True)
 
+fig1.set_title('Comparison of Outputs')  # Set the title of the plot
+fig1.set_xlabel('Sample Index')  # Set the x-axis label
+fig1.set_ylabel('Output Value')  # Set the y-axis label
+
 # fig2.plot(yd, '-b', label='Desired Output')
 fig2.plot(e1[:-1], '-r', label='y1')
 fig2.plot(e2[:-1], '-g', label='y2')
