@@ -105,12 +105,15 @@ fig, axs = plt.subplots(2, 2, figsize=(10, 8))
 fig1 = axs[0,0]
 fig2 = axs[0,1]
 fig3 = axs[1,0]
+fig4 = axs[1,1]
+# Hide the unwanted subplot (bottom right)
+# fig4 = plt.subplot(224, frameon=False)  # Add a subplot but turn off its frame
 
 fig1.plot(yd, '-b', label='Desired Output')
-fig1.plot(y1[:-1], '-r', label='y1')
+fig1.plot(y1[:-1], '--r', label='y1')
 fig1.plot(y2[:-1], '-g', label='y2')
 fig1.plot(y3[:-1], '-y', label='y3')
-fig1.plot(y4[:-1], '-k', label='y4')
+fig1.plot(y4[:-1], '-.k', label='y4')
 fig1.legend(['Desired Output','y1','y2','y3','y4'])
 fig1.grid(True)
 
@@ -119,10 +122,10 @@ fig1.set_xlabel('Step')  # Set the x-axis label
 fig1.set_ylabel('The tracking performance')  # Set the y-axis label
 
 # fig2.plot(yd, '-b', label='Desired Output')
-fig2.plot(e1[:-1], '-r', label='y1')
+fig2.plot(e1[:-1], '--r', label='y1')
 fig2.plot(e2[:-1], '-g', label='y2')
 fig2.plot(e3[:-1], '-y', label='y3')
-fig2.plot(e4[:-1], '-k', label='y4')
+fig2.plot(e4[:-1], '-.k', label='y4')
 fig2.legend(['e1','e2','e3','e4'])
 fig2.grid(True)
 
@@ -135,10 +138,10 @@ fig1.set_xlabel('Step')  # Set the x-axis label
 fig1.set_ylabel('The tracking performance')  # Set the y-axis label
 
 # fig2.plot(yd, '-b', label='Desired Output')
-fig3.plot(phi1[:-1], '-r', label='y1')
+fig3.plot(phi1[:-1], '--r', label='y1')
 fig3.plot(phi2[:-1], '-g', label='y2')
 fig3.plot(phi3[:-1], '-y', label='y3')
-fig3.plot(phi4[:-1], '-k', label='y4')
+fig3.plot(phi4[:-1], '-.k', label='y4')
 fig3.legend(['phi1','phi2','phi3','phi4'])
 fig3.grid(True)
 
@@ -146,11 +149,25 @@ fig3.set_title('   PPD estimation for time invariable desired trajectory')  # Se
 fig3.set_xlabel('Step')  # Set the x-axis label
 fig3.set_ylabel('The PPD estimation')  # Set the y-axis label
 
+# fig2.plot(yd, '-b', label='Desired Output')
+fig4.plot(u1[:-1], '--r', label='y1')
+fig4.plot(u2[:-1], '-g', label='y2')
+fig4.plot(u3[:-1], '-y', label='y3')
+fig4.plot(u4[:-1], '-.k', label='y4')
+fig4.legend(['u1','u2','u3','u4'])
+fig4.grid(True)
+
+fig4.set_title('   Input  for time invariable desired trajectory')  # Set the title of the plot
+fig4.set_xlabel('Step')  # Set the x-axis label
+fig4.set_ylabel('The input signal')  # Set the y-axis label
+
+
+
 # Plot the desired output vs the actual output
 # plt.plot(yd, '-b', label='Desired Output')
 # plt.plot(y1[:-1], '-r', label='y1')
 # plt.plot(y2[:-1], '-g', label='y2')
-# plt.plot(y3[:-1], '-y', label='y3')
+# plt.plot(y3[:-1], '-y', label='y3')]
 # plt.plot(y4[:-1], '-k', label='y4')
 
 # plt.legend()
