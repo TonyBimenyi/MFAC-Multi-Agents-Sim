@@ -84,7 +84,7 @@ for k in range(400):
         u4[k] = u4[k-1] + (rho * phi4[k] / (lamda + phi4[k]**2)) * si4[k]
 
     # Update y values, adding safeguards for large values
-    y1[1] = 0.5
+    y1[1] = 0.51
     y2[1] = 2.5
     y3[1] = 3.5
     y4[1] = 4
